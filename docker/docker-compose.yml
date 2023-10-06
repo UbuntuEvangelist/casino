@@ -1,0 +1,32 @@
+version: '3.2'
+
+services:
+
+  casino-apache:
+    build: './../docker/apache/'
+    ports:
+      - "80:80"
+    volumes:
+      - ./../public_html/:/var/www/html/
+      - ./apache/apache.conf:/usr/local/apache2/conf/apache.conf
+
+  casino-php:
+    build: './../docker/php/'
+    expose:
+      - 9000
+    environment:
+        - TZ=Europe/Moscow
+        - PHP_IDE_CONFIG=serverName=casino.local
+    extra_hosts:
+        - "host.docker.internal:host-gateway"
+
+    volumes:
+      - ./../public_html/:/var/www/html/
+
+  casino-mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=casino
+      - MYSQL_ROOT_PASSWORD=root

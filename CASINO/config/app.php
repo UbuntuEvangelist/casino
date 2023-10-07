@@ -259,12 +259,6 @@ return [
         'Settings' => anlutro\LaravelSettings\Facade::class,
         'JWTAuth' => PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth::class,
         'Agent' => Jenssegers\Agent\Facades\Agent::class,
-
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
-
-
-
-
     ],
-
 ];

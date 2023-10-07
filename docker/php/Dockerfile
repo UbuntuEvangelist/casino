@@ -67,4 +67,5 @@ RUN apt-get install -y wget
 # Install wget
 RUN apt-get update
 
-RUN docker-php-ext-install mysqli
+RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-enable pdo pdo_mysql

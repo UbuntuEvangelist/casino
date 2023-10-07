@@ -1,7 +1,11 @@
-FROM php:8.2-apache
+FROM php:8.2-fpm
 
-#Update apt
 RUN apt-get update -y
+RUN apt-get upgrade -y
+
+RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
+RUN composer self-update 1.10.17
+
 
 #Install necessary program
 RUN apt-get -y install \

@@ -3,17 +3,25 @@ version: '3.2'
 services:
 
   casino-apache:
+    container_name: casino-apache
     build: './../docker/apache/'
+    depends_on:
+      - casino-php
     ports:
       - "80:80"
     volumes:
-      - ./../public_html/:/var/www/html/
+      - ./../:/var/www/html/
       - ./apache/apache.conf:/usr/local/apache2/conf/apache.conf
 
   casino-php:
+    container_name: casino-php
     build: './../docker/php/'
+    depends_on:
+      - casino-mysql
     expose:
       - 9000
+    ports:
+      - "9000:9000"
     environment:
         - TZ=Europe/Moscow
         - PHP_IDE_CONFIG=serverName=casino.local
@@ -21,9 +29,10 @@ services:
         - "host.docker.internal:host-gateway"
 
     volumes:
-      - ./../public_html/:/var/www/html/
+      - ./../:/var/www/html/
 
   casino-mysql:
+    container_name: casino-mysql
     image: mysql:latest
     ports:
       - "3306:3306"

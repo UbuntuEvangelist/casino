@@ -17,8 +17,8 @@ define('LARAVEL_START', microtime(true));
 |
 */
 
-if (file_exists(__DIR__.'./../casino/storage/framework/maintenance.php')) {
-    require __DIR__.'./../casino/storage/framework/maintenance.php';
+if (file_exists(__DIR__.'/casino/storage/framework/maintenance.php')) {
+    require __DIR__.'/casino/storage/framework/maintenance.php';
 }
 
 /*
@@ -32,7 +32,7 @@ if (file_exists(__DIR__.'./../casino/storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'./../casino/vendor/autoload.php';
+require __DIR__.'/casino/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ require __DIR__.'./../casino/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'./../casino/bootstrap/app.php';
+$app = require_once __DIR__.'/casino/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 

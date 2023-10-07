@@ -62,7 +62,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'https://betshop.io'),
+    'url' => env('APP_URL', 'http://casino.local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -75,7 +75,7 @@ return [
     |
     */
 
-    'timezone' => env('APP_TIMEZONE', 'Europe/Berlin'),
+    'timezone' => env('APP_TIMEZONE', 'Europe/Moscow'),
 
     /*
     |--------------------------------------------------------------------------
@@ -194,9 +194,9 @@ return [
         VanguardLTE\Providers\RouteServiceProvider::class,
 
         VanguardLTE\Providers\SMSToServiceProvider::class,
-		
+
 		jeremykenedy\LaravelRoles\RolesServiceProvider::class,
-		
+
         Yajra\DataTables\DataTablesServiceProvider::class,
 
 

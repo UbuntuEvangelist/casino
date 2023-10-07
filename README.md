@@ -24,7 +24,8 @@ public_html → this is your public directory casino → this goes outside your 
 You have to modify two things 1: open index.php inside public_html and replace all folder paths ( ./../casino portion to ./casino/ ) 
 2: MUST configure .htaccess to deny .env files or all dot files ( google dot files protection via htaccess) 
 
-//**** extra tip since it contains demo user accounts Generate new password hash for existing users and run this in phpmyadmin (replace hash) https://bcrypt-generator.com/ If you need to has a new word. Example : (run this in phpmyadmin) UPDATE w_users SET password = '$2a$12$s1RpwEx/oTL3vYQGZjC33eBHECRJb7gkjmAk9Tmyefub7gQ4nh8XS';
+//**** extra tip since it contains demo user accounts Generate new password hash for existing users and run this in phpmyadmin (replace hash) https://bcrypt-generator.com/ If you need to has a new word. Example : (run this in phpmyadmin) 
+UPDATE w_users SET password = '$2a$12$ApcJkIwV4mtWfu8lQKHn6OEQxCiOs9UUk4aglzh9oyOivTDCEYTtS';
 
 This has makes all users have password : Test123 ********/// 
 
